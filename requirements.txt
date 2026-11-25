@@ -1,0 +1,30 @@
+# AI Integration
+openai
+
+# Frontend
+streamlit
+
+# Backend
+fastapi
+uvicorn[standard]
+
+# API Testing
+requests
+httpx
+
+# Test Automation
+pytest
+pytest-playwright
+playwright
+
+# Data Validation
+pydantic
+
+# Environment Configuration
+python-dotenv
+
+# Reporting
+allure-pytest
+
+# Database
+sqlalchemy
