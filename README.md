@@ -25,6 +25,20 @@ The platform uses a simulated payment application with synthetic test data to de
 
 No real customer, banking, or payment information will be used.
 
+### Payment Simulation Rules
+
+- Payment outcomes are deterministic. Amounts of `100000` or more receive a
+  simulated `FAILED` status; this fixed threshold is a demo trigger, not a
+  banking or payment-network limit.
+- Simulated SWIFT requests must be cross-border and include a supported
+  destination currency. Matching source and destination currencies do not
+  invoke FX conversion; different supported currencies use the FX reference
+  rate service. SWIFT is represented only as a simulation label; no real
+  payment messaging or settlement occurs.
+- FX rates are rounded half-up to eight decimal places, matching the database
+  precision (`Numeric(18, 8)`). Converted amounts use `Decimal` and are rounded
+  half-up to two decimal places.
+
 ## Technology Stack
 
 | Component | Technology |
